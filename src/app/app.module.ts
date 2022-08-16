@@ -7,9 +7,9 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { CloudsComponent } from './clouds/clouds.component';
 import { TableComponent } from './table/table.component';
-import {MatTableModule} from '@angular/material/table';
-
-
+import { MatTableModule } from '@angular/material/table';
+import { TableService } from './table/table.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,9 +22,10 @@ import {MatTableModule} from '@angular/material/table';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MatTableModule
+    MatTableModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [TableService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
