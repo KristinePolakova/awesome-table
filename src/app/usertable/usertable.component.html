@@ -1,5 +1,5 @@
-<div class="mat-elevation-z8">
-    <table mat-table [dataSource]="dataSource">
+<div>
+    <table mat-table [dataSource]="dataSource" >
         <ng-container matColumnDef="action">
             <th mat-header-cell *matHeaderCellDef>Action</th>
             <td mat-cell *matCellDef="let userData">{{ userData.action }}</td>
@@ -17,10 +17,10 @@
 
         <ng-container matColumnDef="authorize">
             <th mat-header-cell *matHeaderCellDef>Authorize</th>
-            <td mat-cell *matCellDef="let userData">{{ userData.authorize }}</td>
+            <td mat-cell *matCellDef="let userData">{{ true === userData.authorize ? "Yes" : "No" }}</td>
         </ng-container>
-        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-        <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
 
     </table>
 </div>
