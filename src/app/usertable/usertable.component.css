@@ -1,7 +1,9 @@
 table {
     width: 100%;
+    font-family: Montserrat;
 }
 
 .mat-header-row {
     background-color: #efefef;
+    font-weight: 700;
 }

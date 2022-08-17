@@ -34,15 +34,3 @@ export class UserTableComponent implements OnInit, OnDestroy {
 
   
 }
-
-// export class UserDataSource extends DataSource<any> {
-//   constructor(private userService: UserService) {
-//     super();
-//   }
-
-//   connect(): Observable<User[]> {
-//     return this.userService.getUser();
-//   }
-
-//   disconnect() {}
-// }
