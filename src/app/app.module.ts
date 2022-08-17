@@ -6,9 +6,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { CloudsComponent } from './clouds/clouds.component';
-import { TableComponent } from './table/table.component';
-import {MatTableModule} from '@angular/material/table';
+import { MatTableModule} from '@angular/material/table';
+import { UserTableComponent } from './usertable/usertable.component';
+import { HttpClientModule } from '@angular/common/http';
 
+import { UserService } from './usertable/user.service';
 
 
 @NgModule({
@@ -17,14 +19,15 @@ import {MatTableModule} from '@angular/material/table';
     ToolbarComponent,
     FooterComponent,
     CloudsComponent,
-    TableComponent,
+    UserTableComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MatTableModule
+    MatTableModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
