@@ -10,27 +10,20 @@ import { IUser } from './user.model';
 })
 
 export class UserTableComponent implements OnInit, OnDestroy {
-  
-  errorMessage = '';
   sub!: Subscription;
   userData: IUser[] = [];
   displayedColumns: string[] = ['action', 'user', 'date', 'authorize'];
   dataSource = this.userService.getUser();
-
 
   constructor(private userService: UserService) {}
 
   ngOnInit(): void {
     this.sub = this.userService.getUser().subscribe({
       next: (userData) => (this.userData = userData),
-      error: (err) => (this.errorMessage = err),
     });
   }
-  
+
   ngOnDestroy(): void {
     this.sub.unsubscribe();
-    throw new Error('Method not implemented.');
   }
-
-  
 }
