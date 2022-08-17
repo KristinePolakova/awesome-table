@@ -1,5 +1,5 @@
-export interface User {
-    name: string,
+export interface IUser {
+    action: string,
     user: string,
     date: string,
     authorize: boolean

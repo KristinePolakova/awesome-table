@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { UserService } from './user.service';
 import { Subscription } from 'rxjs';
-import { User } from './user.model';
+import { IUser } from './user.model';
 
 @Component({
   selector: 'app-usertable',
@@ -13,7 +13,7 @@ export class UserTableComponent implements OnInit, OnDestroy {
   
   errorMessage = '';
   sub!: Subscription;
-  userData: User[] = [];
+  userData: IUser[] = [];
   displayedColumns: string[] = ['action', 'user', 'date', 'authorize'];
   dataSource = this.userService.getUser();
 

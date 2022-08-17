@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { catchError, Observable, tap, throwError } from 'rxjs';
-import { User } from './user.model';
+import { IUser } from './user.model';
 
 @Injectable({
   providedIn: 'root',
@@ -14,21 +14,21 @@ export class UserService {
 
   }
 
-  getUser(): Observable<User[]> {
-    return this.http.get<User[]>(this.userUrl).pipe(
-      tap(data => console.log('All: ', JSON.stringify(data))),
-      catchError(this.handleError)
+  getUser(): Observable<IUser[]> {
+    return this.http.get<IUser[]>(this.userUrl).pipe(
+      tap(data => console.log('All: ', JSON.stringify(data)))
+      // catchError(this.handleError)
     );
   }
 
-  private handleError(err: HttpErrorResponse): Observable<never> {
-    let errorMessage = '';
-    if (err.error instanceof ErrorEvent) {
-      errorMessage = `An error occurred: ${err.error.message}`;
-    } else {
-      errorMessage = `Server returned code: ${err.status}, error message is: ${err.message}`;
-    }
-    console.log(errorMessage);
-    return throwError(() => errorMessage);
-  }
-}
+//   private handleError(err: HttpErrorResponse): Observable<never> {
+//     let errorMessage = '';
+//     if (err.error instanceof ErrorEvent) {
+//       errorMessage = `An error occurred: ${err.error.message}`;
+//     } else {
+//       errorMessage = `Server returned code: ${err.status}, error message is: ${err.message}`;
+//     }
+//     console.log(errorMessage);
+//     return throwError(() => errorMessage);
+//   }
+ }
