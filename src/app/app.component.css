@@ -3,8 +3,6 @@ svg.material-icons {
     width: auto;
 }
 
-
-
 :host {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 14px;
@@ -34,9 +32,8 @@ p {
 
 .content {
     display: flex;
-    margin: 82px auto 32px;
-    padding: 0 16px;
+    margin: 92px auto 32px;
+    padding: 42px 16px;
     max-width: 960px;
     flex-direction: column;
-    align-items: center;
 }
